@@ -12,28 +12,29 @@ export const AppContext = (props) => {
 
     useEffect(() => {
         fetchSelectedCategoryData(selectCategories);
-    },[ selectCategories])
+    },[selectCategories])
 
     const fetchSelectedCategoryData = (query) => {
         setLoading(true);
-        fetchDataFromApi(`search/?q=${query}`).then((res) => {
-            console.log(res);
+        fetchDataFromApi(`search/?q=${query}`).then((contents) => {
+            console.log(contents);
+            setSearchResults(contents);
             setLoading(false);
         })
     }
 
     return(
-        <Context.Provider value={{
-            loading,
-            setLoading,
-            searchResults, 
-            setSearchResults,
-            selectCategories,
-            setSelectCategories,
-            mobileMenu,
-            setMobileMenu
-        }} 
-
+        <Context.Provider 
+            value={{
+                loading,
+                setLoading,
+                searchResults, 
+                setSearchResults,
+                selectCategories,
+                setSelectCategories,
+                mobileMenu,
+                setMobileMenu
+            }} 
         >
             {props.children}
         </Context.Provider>

@@ -62,6 +62,9 @@ const Header = () => {
                 </Link>
                 <div className="group flex items-center">
                     <div className="flex h-8 md:ml-10 md:pl-5 border border-[#303030] rounded-l-3xl group-focus-within:border-blue-500 md:group-focus-within:ml-5 md:group-focus-within:pl-0">
+                        <div className="w-10 items-center justify-center hidden group-focus-within:md:flex ">
+                            <IoIoSearch className="textx-white text-xl"/>
+                        </div>
 
                     </div>
 
